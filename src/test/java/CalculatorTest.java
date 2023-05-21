@@ -43,5 +43,13 @@ public class CalculatorTest {
         int result = calculator.add("//;\n1;2");
         Assertions.assertEquals(3, result);
     }
+    @Test
+    public void testNegativeNumberException() {
+        Calculator calculator = new Calculator();
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.add("-6")
+        );
+    }
 
 }
