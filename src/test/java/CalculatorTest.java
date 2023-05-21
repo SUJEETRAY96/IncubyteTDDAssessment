@@ -9,4 +9,11 @@ public class CalculatorTest {
         int result = calculator.add("");
         Assertions.assertEquals(0, result);
     }
+
+    @Test
+    public void testSingleNumberString() {
+        Calculator calculator = new Calculator();
+        int result = calculator.add("5");
+        Assertions.assertEquals(5, result);
+    }
 }
