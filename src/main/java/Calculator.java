@@ -3,7 +3,7 @@ public class Calculator {
         if (numbers.isEmpty()) {
             return 0;
         }
-        String[] arr = numbers.split(",");
+        String[] arr = numbers.split("[,\\n]");
         int sum = 0;
         for (String num : arr) {
             sum += Integer.parseInt(num);
