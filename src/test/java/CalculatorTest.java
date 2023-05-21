@@ -48,8 +48,19 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         Assertions.assertThrows(
                 IllegalArgumentException.class,
-                () -> calculator.add("-6")
+                () -> calculator.add("-6"),
+                "Negatives not allowed: -6"
         );
     }
+    @Test
+    public void testMultipleNegativeNumberException() {
+        Calculator calculator = new Calculator();
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> calculator.add("1,-2,3,-4"),
+                "Negatives not allowed: -2 -4"
+        );
+    }
+
 
 }

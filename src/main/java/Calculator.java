@@ -18,13 +18,13 @@ public class Calculator {
         int sum = 0;
         for (String num : arr) {
             if (Integer.parseInt(num) < 0) {
-                negative.append(num);
+                negative.append(num).append(" ");
             }
             sum += Integer.parseInt(num);
         }
 
         if (negative.length() > 0) {
-            throw new IllegalArgumentException("Negatives not allowed: " + negative);
+            throw new IllegalArgumentException("Negatives not allowed: " + negative.toString().trim());
         }
         return sum;
 
